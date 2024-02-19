@@ -2,7 +2,9 @@
 #include "progressbar.hpp"
 
 GildedRose::GildedRose(vector<Item> & items) : items(items)
-{}
+{
+    
+}
     
 void GildedRose::updateQuality() 
 {
