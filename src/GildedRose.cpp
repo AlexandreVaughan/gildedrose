@@ -3,12 +3,12 @@
 
 GildedRose::GildedRose(vector<Item> & items) : items(items)
 {
-    
+
 }
     
 void GildedRose::updateQuality() 
 {
-    progressbar bar(items.size());
+    progressbar bar(items.size()*3);
     for (int i = 0; i < items.size(); i++)
     {
         bar.update();
@@ -49,11 +49,13 @@ void GildedRose::updateQuality()
             }
         }
 
+        bar.update();
         if (items[i].name != "Sulfuras, Hand of Ragnaros")
         {
             items[i].sellIn = items[i].sellIn - 1;
         }
 
+        bar.update();
         if (items[i].sellIn < 0)
         {
             if (items[i].name != "Aged Brie")
