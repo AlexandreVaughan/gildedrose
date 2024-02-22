@@ -1,10 +1,12 @@
-# C++ version of Gilded Rose refactoring kata
+# Gilded Rose refactoring kata (C++)
 
 ## Introduction
-The C++ version of the Gilded Rose refactoring kata is available in four variants using different test frameworks:
-Traditional unit test with the [Googletest](https://github.com/google/googletest) test framework in the `test/cpp_googletest_unittest` folder.
- 
-The `GildedRose.cpp` file, i.e. the code under test, is identical in all four variants.
+
+This is a C++ version of the GildedRose refactoring Kata using the [Googletest](https://github.com/google/googletest) test framework in the `test/cpp_googletest_unittest` folder.
+
+There is also a standard (command line) test in the `test/cpp_text_test` folder.
+
+The kata was slightly modified to add a dependency to a *status bar* which should also be refactored. (See GildedRoseRequirements.md).
 
 ## Prerequisites
 
@@ -26,31 +28,16 @@ The `GildedRose.cpp` file, i.e. the code under test, is identical in all four va
     $ cd ${GIT_FOLDER}/GildedRose-Refactoring-Kata/cpp/build
     $ ctest -N
     Test project ${GIT_FOLDER}/GildedRose-Refactoring-Kata/cpp/build
-      Test #1: GildedRoseCatch2ApprovalTests
-      Test #2: GildedRoseCatch2UnitTests
-      Test #3: GildedRoseGoogletestApprovalTests
-      Test #4: GildedRoseGoogletestUnitTests
+      Test #1: GildedRoseGoogletestUnitTests
+      Test #2: GildedRoseTextTests
 
 ### Run all tests
 
-    $ ctest
+    $ ctest -C Debug
 
 ### Run all tests with verbose output
 
-    $ ctest -VV
-
-### Run a specific test with verbose output
-
-    $ ctest -VV --tests-regex Catch2Approval
-
-## How to build and run tests using the [CLion IDE](https://www.jetbrains.com/clion/)
-
-1. Start CLion
-2. Select menu `File - Open...`
-3. Select folder `${GIT_FOLDER}/GildedRose-Refactoring-Kata/cpp`
-4. Select menu `Build - Build Project`
-4. Select menu `Run - Run...`
-4. Select what test variant to run, e.g. `GildedRoseCatch2ApprovalTests`.
+    $ ctest -C Debug -VV
 
 ## How to build and run tests using Visual Studio 2019 
 
@@ -58,5 +45,5 @@ The `GildedRose.cpp` file, i.e. the code under test, is identical in all four va
 2. Select `Open a local folder`
 3. Select folder `${GIT_FOLDER}/GildedRose-Refactoring-Kata/cpp`
 4. Wait for message `CMake generation finished.` in the CMake output window at the bottom
-5. Select what test variant to run in the drop down menu for Startup Items, e.g. `GildedRoseCatch2ApprovalTests.exe`.
+5. Select what test variant to run in the drop down menu for Startup Items, e.g. `GildedRoseGoogletestUnitTests.exe`.
 6. Select menu `Debug - Start`

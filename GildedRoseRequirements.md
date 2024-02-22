@@ -36,7 +36,7 @@ for you).
 Just for clarification, an item can never have its `Quality` increase above `50`, however __"Sulfuras"__ is a
 legendary item and as such its `Quality` is `80` and it never alters.
 
-# Note from the CTO
+# Important note from the CTO
 
 The computation of updates to item was quite long so we added a progress bar, that we want to keep.
 But it is a bit annoying when we run tests. If you can find a way to solve that, expect a 200% raise !
